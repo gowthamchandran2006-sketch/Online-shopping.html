@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Multipurpose Site</title>
+  <style>
+    :root{
+      --bg:#0f172a;/* slate-900 */
+      --panel:#111827;/* gray-900 */
+      --muted:#94a3b8;/* slate-400 */
+      --text:#e5e7eb;/* gray-200 */
+      --brand:#22d3ee;/* cyan-400 */
+      --brand-2:#a78bfa;/* violet-400 */
+      --ok:#34d399;/* green-400 */
+      --danger:#fb7185;/* rose-400 */
+      --card:#0b1222;/* custom */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:radial-gradient(1200px 600px at 80% -20%,rgba(34,211,238,.18),transparent 60%),radial-gradient(900px 500px at 0% 0%,rgba(167,139,250,.14),transparent 55%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}/* Layout */
+.container{max-width:1100px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:rgba(15,23,42,.6);z-index:20;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}
+.logo-badge{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:var(--shadow)}
+.logo-badge span{font-weight:900;color:#0b1020}
+.menu{display:flex;gap:18px;align-items:center}
+.menu a{opacity:.9;padding:8px 12px;border-radius:10px}
+.menu a:hover{background:rgba(255,255,255,.06)}
+.cta{display:flex;gap:10px}
+.btn{border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
+.btn-brand{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1020}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--text)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center;padding:48px 0}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 14px}
+.hero p{color:var(--muted);margin:0 0 20px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.glass{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
+.poster{position:relative;overflow:hidden}
+.poster::after{content:"";position:absolute;inset:0;background:radial-gradient(800px 300px at 80% -10%,rgba(34,211,238,.2),transparent 60%)}
+.poster img{aspect-ratio:16/10;object-fit:cover;filter:saturate(110%) contrast(105%)}
+
+/* Sections */
+section{padding:36px 0}
+.section-title{display:flex;align-items:baseline;gap:10px;margin:0 0 18px}
+.section-title h2{margin:0;font-size:clamp(20px,3vw,28px)}
+.section-title .pill{font-size:12px;color:#0b1020;background:linear-gradient(135deg,var(--brand),var(--brand-2));padding:6px 10px;border-radius:999px;font-weight:800}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden;position:relative}
+.card .body{padding:14px}
+.price{font-weight:900}
+.muted{color:var(--muted)}
+.buy{margin-top:10px;width:100%}
+
+/* Movie categories demo */
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;cursor:pointer}
+.chip.active{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1020;border-color:transparent}
+
+/* Language details */
+.lang-flex{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lang-list{display:grid;gap:8px}
+.lang-list button{justify-content:space-between}
+
+/* Login modal */
+dialog{border:0;border-radius:18px;background:var(--panel);color:var(--text);box-shadow:var(--shadow);max-width:420px;width:96%}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.field{display:grid;gap:6px;margin:10px 0}
+.field input{padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0b1020;color:var(--text)}
+
+/* Toast */
+.toast{position:fixed;right:16px;top:16px;display:grid;gap:8px;z-index:50}
+.toast .t{padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));animation:pop .2s ease-out}
+
+/* Animations */
+@keyframes pop{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.fade-in{opacity:0;transform:translateY(8px);animation:fade .6s .1s forwards}
+@keyframes fade{to{opacity:1;transform:none}}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr}
+  .lang-flex{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .menu{display:none}
+  .grid{grid-template-columns:1fr}
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#home">
+        <div class="logo-badge"><span>★</span></div>
+        <span>MySite</span>
+      </a>
+      <nav class="menu">
+        <a href="#shop">Shop</a>
+        <a href="#movies">Movies</a>
+        <a href="#learn">Learn</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cta">
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle theme">Theme</button>
+        <button class="btn btn-brand" id="loginBtn">Login</button>
+      </div>
+    </div>
+  </header>  <main class="container">
+    <!-- Hero / Poster with space to add your image -->
+    <section id="home" class="hero">
+      <div>
+        <h1 class="fade-in">Build fast. Look modern. All in one file.</h1>
+        <p class="fade-in">A clean starter using only HTML, CSS & JavaScript — responsive layout, product cards, toast notifications, login modal, and interactive sections.</p>
+        <div class="actions">
+          <a class="btn btn-brand" href="#shop">Start Shopping</a>
+          <a class="btn btn-ghost" href="#learn">Explore Languages</a>
+        </div>
+      </div>
+      <div class="poster glass fade-in">
+        <!-- Replace the src with your own image path -->
+        <img src="https://images.unsplash.com/photo-1522202222206-91f22d3da0d8?auto=format&fit=crop&w=1380&q=60" alt="Your poster image placeholder" />
+      </div>
+    </section><!-- Shop / Products -->
+<section id="shop">
+  <div class="section-title">
+    <h2>Shop</h2>
+    <span class="pill">3 Products</span>
+  </div>
+  <div class="grid">
+    <!-- Product 1 -->
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=60" alt="Keyboard" />
+      <div class="body">
+        <h3>Mechanical Keyboard</h3>
+        <p class="muted">RGB backlit, hot‑swappable switches.</p>
+        <div class="price">₹4,299</div>
+        <button class="btn btn-brand buy" data-item="Mechanical Keyboard">Buy</button>
+      </div>
+    </article>
+    <!-- Product 2 -->
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1526178611292-1b69f05af393?auto=format&fit=crop&w=1200&q=60" alt="Headphones" />
+      <div class="body">
+        <h3>Wireless Headphones</h3>
+        <p class="muted">40h battery, noise isolation.</p>
+        <div class="price">₹2,899</div>
+        <button class="btn btn-brand buy" data-item="Wireless Headphones">Buy</button>
+      </div>
+    </article>
+    <!-- Product 3 -->
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=1200&q=60" alt="Smartwatch" />
+      <div class="body">
+        <h3>Smart Watch</h3>
+        <p class="muted">Health tracking & AMOLED display.</p>
+        <div class="price">₹3,499</div>
+        <button class="btn btn-brand buy" data-item="Smart Watch">Buy</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Movies (category chips demo) -->
+<section id="movies">
+  <div class="section-title">
+    <h2>Movies</h2>
+    <span class="pill">Categories</span>
+  </div>
+  <div class="chips" id="movieChips">
+    <button class="chip active" data-cat="Action">Action</button>
+    <button class="chip" data-cat="Comedy">Comedy</button>
+    <button class="chip" data-cat="Drama">Drama</button>
+    <button class="chip" data-cat="Sci‑Fi">Sci‑Fi</button>
+  </div>
+  <p class="muted" id="movieOutput" style="margin-top:12px">Showing: <strong>Action</strong> — Add your movie cards here.</p>
+</section>
+
+<!-- Learn (programming language list + details) -->
+<section id="learn">
+  <div class="section-title">
+    <h2>Learn</h2>
+    <span class="pill">Programming</span>
+  </div>
+  <div class="glass" style="padding:16px">
+    <div class="lang-flex">
+      <div>
+        <button class="btn btn-ghost" id="toggleLangs">Show / Hide Languages</button>
+        <div class="lang-list" id="langList" style="margin-top:10px"></div>
+      </div>
+      <div class="glass" style="padding:16px">
+        <h3 id="langTitle" style="margin:0 0 6px">Select a language →</h3>
+        <p id="langDesc" class="muted" style="margin:0">Click any item on the left to see quick details here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact</h2>
+    <span class="pill">Say Hi 👋</span>
+  </div>
+  <div class="glass" style="padding:16px">
+    <p class="muted">This is a starter section. Replace with your own contact form or details.</p>
+  </div>
+</section>
+
+  </main>  <!-- Login Modal -->  <dialog id="loginModal">
+    <form method="dialog" id="loginForm" style="padding:18px">
+      <h3 style="margin:0 0 10px">Login</h3>
+      <p class="muted" style="margin:0 0 8px">Demo validation with vanilla JS</p>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••••" minlength="6" required />
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:10px">
+        <button class="btn btn-ghost" value="cancel">Cancel</button>
+        <button class="btn btn-brand" value="login">Login</button>
+      </div>
+    </form>
+  </dialog>  <!-- Toast area -->  <div class="toast" id="toast"></div>  <script>
+    // Theme toggle (light/dark by flipping background gradients)
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click',()=>{
+      document.body.classList.toggle('light');
+      if(document.body.classList.contains('light')){
+        document.documentElement.style.setProperty('--bg','#f5f7fb');
+        document.documentElement.style.setProperty('--panel','#ffffff');
+        document.documentElement.style.setProperty('--text','#0b1020');
+        document.documentElement.style.setProperty('--muted','#4b5563');
+      }else{
+        document.documentElement.style.setProperty('--bg','#0f172a');
+        document.documentElement.style.setProperty('--panel','#111827');
+        document.documentElement.style.setProperty('--text','#e5e7eb');
+        document.documentElement.style.setProperty('--muted','#94a3b8');
+      }
+      toast('Theme changed');
+    });
+
+    // Login modal
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const loginForm = document.getElementById('loginForm');
+
+    loginBtn.addEventListener('click',()=>loginModal.showModal());
+    loginForm.addEventListener('close',()=>{});
+    loginForm.addEventListener('submit', (e)=>{ e.preventDefault(); });
+    loginModal.addEventListener('close',()=>{
+      if(loginModal.returnValue === 'login'){
+        const email=document.getElementById('email').value.trim();
+        const pwd=document.getElementById('password').value;
+        if(!email || !email.includes('@')){ toast('Enter a valid email', true); return; }
+        if(pwd.length < 6){ toast('Password must be 6+ chars', true); return; }
+        toast('Logged in successfully');
+      }
+    });
+
+    // Buy buttons → toast "Your order is placed"
+    document.querySelectorAll('.buy').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item = btn.dataset.item || 'Item';
+        toast(`Your order for <b>${item}</b> is placed ✅`);
+      });
+    });
+
+    // Movie chips interaction
+    const chips = document.getElementById('movieChips');
+    const movieOutput = document.getElementById('movieOutput');
+    chips.addEventListener('click',(e)=>{
+      if(e.target.classList.contains('chip')){
+        chips.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+        e.target.classList.add('active');
+        movieOutput.innerHTML = `Showing: <strong>${e.target.dataset.cat}</strong> — Add your movie cards here.`;
+      }
+    });
+
+    // Programming languages list + details
+    const languages = [
+      {name:'HTML', about:'Markup language for structuring web content. Elements, attributes, semantic tags.'},
+      {name:'CSS', about:'Styles layout and design. Flexbox, Grid, animations, responsive design.'},
+      {name:'JavaScript', about:'Adds interactivity. DOM, events, fetch API, async/await.'},
+      {name:'Python', about:'General purpose & data. Django/Flask for web backends.'},
+      {name:'Java', about:'Strong OOP language used in Android & enterprise.'}
+    ];
+    const langList = document.getElementById('langList');
+    const langTitle = document.getElementById('langTitle');
+    const langDesc = document.getElementById('langDesc');
+    const toggleLangs = document.getElementById('toggleLangs');
+
+    function renderLangs(){
+      langList.innerHTML = '';
+      languages.forEach(l=>{
+        const b = document.createElement('button');
+        b.className = 'btn btn-ghost';
+        b.innerHTML = `${l.name}`;
+        b.addEventListener('click',()=>{
+          langTitle.textContent = l.name;
+          langDesc.textContent = l.about;
+        });
+        langList.appendChild(b);
+      });
+    }
+    renderLangs();
+    let langsVisible = true;
+    toggleLangs.addEventListener('click',()=>{
+      langsVisible = !langsVisible;
+      langList.style.display = langsVisible ? 'grid' : 'none';
+    });
+
+    // Toast helper
+    const toastBox = document.getElementById('toast');
+    function toast(msg, isError=false){
+      const t = document.createElement('div');
+      t.className = 't';
+      t.style.borderColor = isError ? 'rgba(251,113,133,.6)' : 'rgba(255,255,255,.16)';
+      t.innerHTML = msg;
+      toastBox.appendChild(t);
+      setTimeout(()=>{
+        t.style.transition = 'opacity .25s, transform .25s';
+        t.style.opacity = 0; t.style.transform = 'translateY(-6px)';
+        setTimeout(()=> t.remove(), 260);
+      }, 2400);
+    }
+  </script></body>
+</html>
