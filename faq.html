@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FAQ - My shopping</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.faq-container{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+}
+
+.faq-title{
+    text-align:center;
+    font-size:50px;
+    color:#111827;
+    margin-bottom:20px;
+}
+
+.faq-subtitle{
+    text-align:center;
+    font-size:22px;
+    color:#777;
+    margin-bottom:50px;
+}
+
+.faq-box{
+    background:white;
+    margin-bottom:25px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.faq-box:hover{
+    transform:translateY(-5px);
+}
+
+.faq-question{
+    width:100%;
+    background:#111827;
+    color:white;
+    padding:22px;
+    border:none;
+    outline:none;
+    text-align:left;
+    font-size:20px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.faq-question:hover{
+    background:#00bcd4;
+}
+
+
+.faq-answer{
+    display:none;
+    padding:25px;
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+    background:white;
+}
+
+.help-section{
+    margin-top:70px;
+    background:#111827;
+    color:white;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.help-section h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.help-section p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.help-section button{
+    padding:15px 35px;
+    border:none;
+    background:#00bcd4;
+    color:white;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.help-section button:hover{
+    background:#0097a7;
+}
+
+footer{
+    margin-top:60px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+@media(max-width:768px){
+
+    .faq-title{
+        font-size:35px;
+    }
+
+    .faq-subtitle{
+        font-size:18px;
+    }
+
+    .faq-question{
+        font-size:17px;
+    }
+
+    .help-section{
+        padding:30px;
+    }
+
+    .help-section h1{
+        font-size:30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🛒 ShopEasy
+</div>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="offers.html">Offers</a></li>
+<li><a href="cart.html">Cart</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="faq.html">FAQ</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="faq-container">
+
+<h1 class="faq-title">
+Frequently Asked Questions
+</h1>
+
+<p class="faq-subtitle">
+Find Answers To Common Questions
+</p>
+
+<div class="faq-box">
+
+<button class="faq-question">
+
+How Do I Place An Order?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+To place an order, browse products, add items to
+your cart, and click Proceed To Checkout. Then
+enter your delivery and payment details.
+
+</div>
+
+</div>
+
+<div class="faq-box">
+
+<button class="faq-question">
+
+What Payment Methods Are Accepted?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+We accept UPI, Credit Cards, Debit Cards,
+Net Banking, and Cash On Delivery.
+
+</div>
+
+</div>
+
+<div class="faq-box">
+
+<button class="faq-question">
+
+How Long Does Delivery Take?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Delivery usually takes 3-7 working days depending
+on your location and product availability.
+
+</div>
+
+</div>
+<div class="faq-box">
+
+<button class="faq-question">
+
+Can I Return A Product?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes, products can be returned within 7 days if
+they are damaged or incorrect.
+
+</div>
+
+</div>
+
+<div class="faq-box">
+
+<button class="faq-question">
+
+How Can I Track My Order?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+After placing your order, you will receive a
+tracking ID through email or SMS.
+
+</div>
+
+</div>
+
+<div class="faq-box">
+
+<button class="faq-question">
+
+Is Online Payment Safe?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+Yes, all online payments are protected with
+secure encryption and payment gateways.
+
+</div>
+
+</div>
+
+<div class="help-section">
+
+<h1>
+Still Need Help?
+</h1>
+
+<p>
+Contact our customer support team for more help.
+</p>
+
+<a href="contact.html">
+
+<button>
+Contact Support
+</button>
+
+</a>
+
+</div>
+
+</section>
+<footer>
+
+<p>
+© 2026 My Shopping | Website Created By Gowtham Raj
+</p>
+
+</footer>
+
+<script>
+
+const faqQuestions =
+document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+
+    question.addEventListener("click", () => {
+
+        const answer =
+        question.nextElementSibling;
+
+        if(answer.style.display === "block"){
+
+            answer.style.display = "none";
+
+            question.querySelector("span")
+            .innerText = "+";
+
+        }
+
+        else{
+
+            answer.style.display = "block";
+
+            question.querySelector("span")
+            .innerText = "-";
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>

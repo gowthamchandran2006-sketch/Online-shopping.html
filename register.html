@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register - My shopping</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#111827,#1f2937);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.register-container{
+    width:100%;
+    max-width:500px;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.register-logo{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.register-title{
+    text-align:center;
+    font-size:40px;
+    color:#111827;
+    margin-bottom:10px;
+}
+
+.register-subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:35px;
+    font-size:17px;
+}
+
+.register-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.input-box{
+    width:100%;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:10px;
+    color:#111827;
+    font-size:17px;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:12px;
+    outline:none;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.input-box input:focus{
+    border-color:#00bcd4;
+}
+
+.register-btn{
+    padding:15px;
+    border:none;
+    background:#111827;
+    color:white;
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.register-btn:hover{
+    background:#00bcd4;
+}
+
+.login-link{
+    text-align:center;
+    margin-top:25px;
+    color:#555;
+}
+
+.login-link a{
+    color:#00bcd4;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+.terms{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#555;
+    font-size:15px;
+}
+
+.terms a{
+    color:#00bcd4;
+    text-decoration:none;
+}
+
+@media(max-width:600px){
+
+    .register-container{
+        padding:30px 20px;
+    }
+
+    .register-title{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="register-container">
+
+<div class="register-logo">
+🛒
+</div>
+
+<h1 class="register-title">
+Create Account
+</h1>
+
+<p class="register-subtitle">
+Join ShopEasy And Start Shopping
+</p>
+
+<form class="register-form">
+
+<div class="input-box">
+
+<label>Full Name</label>
+
+<input 
+type="text" 
+placeholder="Enter your full name"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Email Address</label>
+
+<input 
+type="email" 
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Phone Number</label>
+
+<input 
+type="tel" 
+placeholder="Enter your phone number"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<input 
+type="password" 
+placeholder="Create password"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Confirm Password</label>
+
+<input 
+type="password" 
+placeholder="Confirm password"
+required>
+
+</div>
+
+<div class="terms">
+
+<input type="checkbox" required>
+
+<span>
+I agree to the 
+<a href="#">Terms & Conditions</a>
+</span>
+
+</div>
+
+<button type="submit" class="register-btn">
+
+Register Now
+
+</button>
+
+</form>
+
+
+<div class="login-link">
+
+Already Have An Account?
+
+<a href="login.html">
+Login
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

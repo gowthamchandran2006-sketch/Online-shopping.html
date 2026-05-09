@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services - My shopping</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#111827;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav-links li a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+}
+
+.nav-links li a:hover{
+    color:#00bcd4;
+}
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1556740749-887f6717d7e4');
+    background-size:cover;
+    background-position:center;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+}
+
+.services-container{
+    width:90%;
+    margin:auto;
+    padding:70px 0;
+}
+
+.services-title{
+    text-align:center;
+    font-size:50px;
+    color:#111827;
+    margin-bottom:20px;
+}
+
+.services-subtitle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin-bottom:60px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:white;
+    padding:40px 30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 0 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-icon{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.service-card h2{
+    color:#111827;
+    margin-bottom:15px;
+}
+
+.service-card p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.service-card button{
+    padding:12px 25px;
+    border:none;
+    background:#111827;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.service-card button:hover{
+    background:#00bcd4;
+}
+
+.extra-section{
+    margin-top:80px;
+    background:#111827;
+    color:white;
+    padding:60px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.extra-section h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.extra-section p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.extra-section button{
+    padding:15px 35px;
+    border:none;
+    background:#00bcd4;
+    color:white;
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.extra-section button:hover{
+    background:#0097a7;
+}
+
+
+footer{
+    margin-top:60px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .services-title{
+        font-size:35px;
+    }
+
+    .services-subtitle{
+        font-size:18px;
+    }
+
+    .extra-section{
+        padding:35px 20px;
+    }
+
+    .extra-section h1{
+        font-size:30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🛒 MyShopping
+</div>
+
+<ul class="nav-links">
+
+<li><a href="home.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="offers.html">Offers</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="reviews.html">Reviews</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Our Services
+</h1>
+
+<p>
+Best Online Shopping Services For Everyone
+</p>
+
+</div>
+
+</section>
+
+<section class="services-container">
+
+<h1 class="services-title">
+What We Provide
+</h1>
+
+<p class="services-subtitle">
+Premium Services With Fast And Secure Shopping
+</p>
+
+<div class="service-grid">
+<div class="service-card">
+
+<div class="service-icon">
+🚚
+</div>
+
+<h2>
+Fast Delivery
+</h2>
+
+<p>
+Get your products delivered quickly and safely
+to your doorstep across the country.
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+💳
+</div>
+
+<h2>
+Secure Payment
+</h2>
+
+<p>
+100% secure online payment methods with trusted
+banking and payment gateways.
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🔄
+</div>
+
+<h2>
+Easy Returns
+</h2>
+
+<p>
+Simple return and refund policy for damaged
+or unwanted products.
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+📞
+</div>
+
+<h2>
+24/7 Support
+</h2>
+
+<p>
+Customer support team available anytime
+to solve your shopping problems.
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+<!-- SERVICE 5 -->
+
+<div class="service-card">
+
+<div class="service-icon">
+🎁
+</div>
+
+<h2>
+Gift Services
+</h2>
+
+<p>
+Special gift packaging and surprise delivery
+services for your loved ones.
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">
+⭐
+</div>
+
+<h2>
+Premium Quality
+</h2>
+
+<p>
+High quality branded products with verified
+seller guarantees.
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+</div>
+
+<div class="extra-section">
+
+<h1>
+Why Choose MyShopping?
+</h1>
+
+<p>
+We provide modern online shopping experience with
+secure payments, premium quality products, fast delivery,
+and trusted customer support services.
+</p>
+
+<button>
+Start Shopping
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 MyShopping | Website Created By Gowtham Raj
+</p>
+
+</footer>
+
+</body>
+
+</html>

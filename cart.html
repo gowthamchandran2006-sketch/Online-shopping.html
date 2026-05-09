@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart - 
+My shopping</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.cart-container{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+}
+
+.cart-title{
+    text-align:center;
+    font-size:50px;
+    color:#111827;
+    margin-bottom:40px;
+}
+.cart-items{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.cart-card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.cart-card:hover{
+    transform:translateY(-5px);
+}
+
+.cart-product{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.cart-product img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.cart-details h2{
+    font-size:28px;
+    margin-bottom:10px;
+    color:#111827;
+}
+
+.cart-details p{
+    font-size:18px;
+    color:#777;
+}
+
+.price{
+    color:#00bcd4;
+    font-weight:bold;
+}
+.quantity-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantity-box button{
+    width:40px;
+    height:40px;
+    border:none;
+    background:#111827;
+    color:white;
+    font-size:20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.quantity-box button:hover{
+    background:#00bcd4;
+}
+
+.quantity{
+    font-size:22px;
+    width:40px;
+    text-align:center;
+}
+
+.remove-btn{
+    padding:12px 25px;
+    border:none;
+    background:red;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.remove-btn:hover{
+    background:darkred;
+}
+
+.summary-section{
+    margin-top:50px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.summary-section h1{
+    margin-bottom:20px;
+    color:#111827;
+}
+
+.summary-box{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.total-price{
+    color:#00bcd4;
+    font-weight:bold;
+}
+
+.checkout-btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    background:#111827;
+    color:white;
+    font-size:20px;
+    border-radius:15px;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.checkout-btn:hover{
+    background:#00bcd4;
+}
+
+.empty-cart{
+    text-align:center;
+    margin-top:50px;
+}
+
+.empty-cart img{
+    width:250px;
+    margin-bottom:20px;
+}
+
+.empty-cart h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.empty-cart p{
+    font-size:20px;
+    color:#777;
+}
+
+footer{
+    margin-top:60px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+    .cart-title{
+        font-size:35px;
+    }
+
+    .cart-card{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    .cart-product{
+        flex-direction:column;
+    }
+
+    .summary-box{
+        font-size:18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🛒 ShopEasy
+</div>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="offers.html">Offers</a></li>
+<li><a href="cart.html">Cart</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="cart-container">
+
+<h1 class="cart-title">
+Your Shopping Cart
+</h1>
+
+<div class="cart-items">
+
+
+<div class="cart-card">
+
+<div class="cart-product">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+
+<div class="cart-details">
+
+<h2>iPhone 15</h2>
+
+<p class="price">
+₹79,999
+</p>
+
+</div>
+
+</div>
+
+<div class="quantity-box">
+
+<button onclick="decreaseQuantity('qty1')">
+-
+</button>
+
+<div class="quantity" id="qty1">
+1
+</div>
+
+<button onclick="increaseQuantity('qty1')">
++
+</button>
+
+</div>
+
+<button class="remove-btn">
+Remove
+</button>
+
+</div>
+
+
+<div class="cart-card">
+
+<div class="cart-product">
+
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853">
+
+<div class="cart-details">
+
+<h2>Gaming Laptop</h2>
+
+<p class="price">
+₹95,000
+</p>
+
+</div>
+
+</div>
+
+<div class="quantity-box">
+
+<button onclick="decreaseQuantity('qty2')">
+-
+</button>
+
+<div class="quantity" id="qty2">
+1
+</div>
+
+<button onclick="increaseQuantity('qty2')">
++
+</button>
+
+</div>
+
+<button class="remove-btn">
+Remove
+</button>
+
+</div>
+
+
+<div class="cart-card">
+
+<div class="cart-product">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
+
+<div class="cart-details">
+
+<h2>Wireless Headphones</h2>
+
+<p class="price">
+₹3,999
+</p>
+
+</div>
+
+</div>
+
+<div class="quantity-box">
+
+<button onclick="decreaseQuantity('qty3')">
+-
+</button>
+
+<div class="quantity" id="qty3">
+1
+</div>
+
+<button onclick="increaseQuantity('qty3')">
++
+</button>
+
+</div>
+
+<button class="remove-btn">
+Remove
+</button>
+
+</div>
+
+</div>
+
+<div class="summary-section">
+
+<h1>
+Order Summary
+</h1>
+
+<div class="summary-box">
+
+<span>Subtotal</span>
+
+<span>₹1,78,998</span>
+
+</div>
+
+<div class="summary-box">
+
+<span>Shipping</span>
+
+<span>₹199</span>
+
+</div>
+
+<div class="summary-box">
+
+<span>Discount</span>
+
+<span>-₹500</span>
+
+</div>
+
+<hr>
+
+<div class="summary-box total-price">
+
+<span>Total</span>
+
+<span>₹1,78,697</span>
+
+</div>
+
+<button class="checkout-btn">
+Proceed To Checkout
+</button>
+
+</div>
+<div class="empty-cart">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png">
+
+<h2>
+Your Cart Is Ready
+</h2>
+
+<p>
+Add more products and enjoy shopping.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 My shopping| Website Created By Gowtham Raj
+</p>
+
+</footer>
+
+<script>
+
+function increaseQuantity(id){
+
+    let qty = document.getElementById(id);
+
+    qty.innerText = parseInt(qty.innerText) + 1;
+
+}
+
+function decreaseQuantity(id){
+
+    let qty = document.getElementById(id);
+
+    if(parseInt(qty.innerText) > 1){
+
+        qty.innerText = parseInt(qty.innerText) - 1;
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

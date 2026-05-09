@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.contact-container{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+}
+
+.contact-title{
+    text-align:center;
+    font-size:50px;
+    color:#111827;
+    margin-bottom:20px;
+}
+
+.contact-subtitle{
+    text-align:center;
+    font-size:22px;
+    color:#777;
+    margin-bottom:50px;
+}
+.contact-content{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+.contact-info{
+    flex:1;
+    min-width:320px;
+}
+
+.info-box{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.info-box:hover{
+    transform:translateY(-5px);
+}
+
+.info-box h2{
+    color:#111827;
+    margin-bottom:10px;
+}
+
+.info-box p{
+    color:#777;
+    font-size:18px;
+    line-height:1.7;
+}
+.contact-form{
+    flex:1;
+    min-width:320px;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h1{
+    margin-bottom:25px;
+    color:#111827;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:10px;
+    font-size:18px;
+    color:#111827;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:#00bcd4;
+}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#111827;
+    color:white;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    background:#00bcd4;
+}
+
+.map-section{
+    margin-top:60px;
+}
+
+.map-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:30px;
+    color:#111827;
+}
+
+.map-container{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.map-container iframe{
+    width:100%;
+    height:400px;
+    border:none;
+}
+
+
+.social-section{
+    margin-top:70px;
+    text-align:center;
+}
+
+.social-section h1{
+    font-size:40px;
+    margin-bottom:30px;
+    color:#111827;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.social-icons a{
+    width:70px;
+    height:70px;
+    background:#111827;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:30px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:#00bcd4;
+    transform:scale(1.1);
+}
+
+footer{
+    margin-top:60px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+    .contact-title{
+        font-size:35px;
+    }
+
+    .contact-subtitle{
+        font-size:18px;
+    }
+
+    .map-title,
+    .social-section h1{
+        font-size:30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🛒 ShopEasy
+</div>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="offers.html">Offers</a></li>
+<li><a href="cart.html">Cart</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="contact-container">
+
+<h1 class="contact-title">
+Contact Us
+</h1>
+
+<p class="contact-subtitle">
+We Are Always Ready To Help You
+</p>
+
+<div class="contact-content">
+
+<div class="contact-info">
+
+<div class="info-box">
+
+<h2>📍 Address</h2>
+
+<p>
+Myshopping, Chennai, Tamil Nadu, India
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h2>📞 Phone</h2>
+
+<p>
++91 9600962721
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h2>📧 Email</h2>
+
+<p>
+gowthamraj20006@gmail.com
+</p>
+
+</div>
+
+<div class="info-box">
+
+<h2>⏰ Working Hours</h2>
+
+<p>
+Monday - Saturday<br>
+9:00 AM - 9:00 PM
+</p>
+
+</div>
+
+</div>
+<div class="contact-form">
+
+<h1>
+Send Message
+</h1>
+
+<form>
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input type="text" placeholder="Enter your name">
+
+</div>
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input type="email" placeholder="Enter your email">
+
+</div>
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input type="text" placeholder="Enter your phone number">
+
+</div>
+
+<div class="form-group">
+
+<label>Your Message</label>
+
+<textarea rows="6" placeholder="Write your message"></textarea>
+
+</div>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="map-section">
+
+<h1 class="map-title">
+Our Location
+</h1>
+
+<div class="map-container">
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.412719822756!2d80.27071857451976!3d13.082680512433474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265d0d2f7e7bb%3A0x9c8a7b5d8b6b6f72!2sChennai!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin">
+</iframe>
+
+</div>
+
+</div>
+
+<div class="social-section">
+
+<h1>
+Follow Us
+</h1>
+
+<div class="social-icons">
+
+<a href="#">
+📘
+</a>
+
+<a href="#">
+📸
+</a>
+
+<a href="#">
+🐦
+</a>
+
+<a href="#">
+▶️
+</a>
+
+<a href="#">
+💼
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 My shopping| Website Created By Gowtham Raj
+</p>
+
+</footer>
+
+</body>
+
+</html>

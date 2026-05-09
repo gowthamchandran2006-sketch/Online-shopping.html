@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Offers - ShopEasy</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.offers-container{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+}
+
+.offers-title{
+    text-align:center;
+    font-size:50px;
+    color:#111827;
+    margin-bottom:20px;
+}
+
+.offers-subtitle{
+    text-align:center;
+    font-size:22px;
+    color:#777;
+    margin-bottom:50px;
+}
+
+.main-offer{
+    background:linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da');
+    background-size:cover;
+    background-position:center;
+    padding:100px 40px;
+    border-radius:30px;
+    text-align:center;
+    color:white;
+    margin-bottom:60px;
+}
+
+.main-offer h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.main-offer p{
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+.main-offer button{
+    padding:15px 35px;
+    border:none;
+    background:#00bcd4;
+    color:white;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.main-offer button:hover{
+    background:#0097a7;
+}
+
+.offer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.offer-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.offer-card:hover{
+    transform:translateY(-10px);
+}
+
+.offer-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.offer-content{
+    padding:25px;
+    text-align:center;
+}
+
+.offer-tag{
+    display:inline-block;
+    background:red;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.offer-content h2{
+    color:#111827;
+    margin-bottom:15px;
+}
+
+.offer-content p{
+    color:#777;
+    margin-bottom:20px;
+    line-height:1.7;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:#999;
+    margin-right:10px;
+}
+
+.new-price{
+    color:#00bcd4;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.offer-content button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    background:#111827;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.offer-content button:hover{
+    background:#00bcd4;
+}
+
+
+.countdown-section{
+    margin-top:80px;
+    background:#111827;
+    color:white;
+    padding:60px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.countdown-section h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.countdown-section p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:white;
+    color:#111827;
+    width:120px;
+    padding:25px;
+    border-radius:20px;
+}
+
+.time-box h2{
+    font-size:40px;
+    color:#00bcd4;
+}
+
+.time-box span{
+    font-size:18px;
+}
+
+footer{
+    margin-top:60px;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+    .offers-title{
+        font-size:35px;
+    }
+
+    .offers-subtitle{
+        font-size:18px;
+    }
+
+    .main-offer h1{
+        font-size:38px;
+    }
+
+    .main-offer p{
+        font-size:18px;
+    }
+
+    .countdown-section{
+        padding:35px 20px;
+    }
+
+    .countdown-section h1{
+        font-size:30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+<header>
+
+<div class="logo">
+🛒 ShopEasy
+</div>
+
+<nav class="navbar">
+
+<ul class="nav-links">
+
+<li><a href="home.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="offers.html">Offers</a></li>
+<li><a href="cart.html">Cart</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="offers-container">
+
+<h1 class="offers-title">
+Special Offers
+</h1>
+
+<p class="offers-subtitle">
+Best Discounts Available For Limited Time
+</p>
+
+<div class="main-offer">
+
+<h1>
+Mega Sale 2026
+</h1>
+
+<p>
+Get Up To 70% Discount On All Products
+</p>
+
+<button>
+Shop Now
+</button>
+
+</div>
+
+<div class="offer-grid">
+
+<div class="offer-card">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+
+<div class="offer-content">
+
+<div class="offer-tag">
+50% OFF
+</div>
+
+<h2>iPhone 15</h2>
+
+<p>
+Latest Apple smartphone with premium features.
+</p>
+
+<div>
+
+<span class="old-price">
+₹99,999
+</span>
+
+<span class="new-price">
+₹79,999
+</span>
+
+</div>
+
+<button>
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="offer-card">
+
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853">
+
+<div class="offer-content">
+
+<div class="offer-tag">
+40% OFF
+</div>
+
+<h2>Gaming Laptop</h2>
+
+<p>
+Powerful laptop for gaming and professional work.
+</p>
+
+<div>
+
+<span class="old-price">
+₹1,20,000
+</span>
+
+<span class="new-price">
+₹95,000
+</span>
+
+</div>
+
+<button>
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="offer-card">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
+
+<div class="offer-content">
+
+<div class="offer-tag">
+30% OFF
+</div>
+
+<h2>Wireless Headphones</h2>
+
+<p>
+Noise cancellation wireless headphones.
+</p>
+
+<div>
+
+<span class="old-price">
+₹5,999
+</span>
+
+<span class="new-price">
+₹3,999
+</span>
+
+</div>
+
+<button>
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="offer-card">
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+
+<div class="offer-content">
+
+<div class="offer-tag">
+60% OFF
+</div>
+
+<h2>Sports Shoes</h2>
+
+<p>
+Comfortable and stylish sports shoes collection.
+</p>
+
+<div>
+
+<span class="old-price">
+₹4,999
+</span>
+
+<span class="new-price">
+₹2,499
+</span>
+
+</div>
+
+<button>
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="countdown-section">
+
+<h1>
+Offer Ends Soon
+</h1>
+
+<p>
+Hurry Up Before The Sale Ends
+</p>
+
+<div class="countdown">
+
+<div class="time-box">
+
+<h2 id="days">
+10
+</h2>
+
+<span>Days</span>
+
+</div>
+
+<div class="time-box">
+
+<h2 id="hours">
+12
+</h2>
+
+<span>Hours</span>
+
+</div>
+
+<div class="time-box">
+
+<h2 id="minutes">
+45
+</h2>
+
+<span>Minutes</span>
+
+</div>
+
+<div class="time-box">
+
+<h2 id="seconds">
+30
+</h2>
+
+<span>Seconds</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<footer>
+
+<p>
+© 2026 ShopEasy | Website Created By Gowtham Raj
+</p>
+
+</footer>
+
+<script>
+
+let seconds = 30;
+let minutes = 45;
+let hours = 12;
+let days = 10;
+
+setInterval(() => {
+
+    seconds--;
+
+    if(seconds < 0){
+
+        seconds = 59;
+        minutes--;
+
+    }
+
+    if(minutes < 0){
+
+        minutes = 59;
+        hours--;
+
+    }
+
+    if(hours < 0){
+
+        hours = 23;
+        days--;
+
+    }
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+},1000);
+
+</script>
+
+</body>
+
+</html>
